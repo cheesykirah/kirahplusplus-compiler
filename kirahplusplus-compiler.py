@@ -11,9 +11,11 @@ kirah_code = """
 hören sie mich aus
 INT. COMPUTER
 Anmerkung: Hier ist eine einfache Hello World Umsetzung.
-text = "Hallo Welt"
-sag mal bitte uwu text please
-please lgbtq rights
+please
+Wiederholungsschleife: uwu in der Reihe(1, 6): please
+    sag mal bitte uwu uwu {uwu} please
+please
+please lgbtq rights please
 another day another victory for the og
 """
 
@@ -25,6 +27,7 @@ another day another victory for the og
 # LGBTQ+ freundlich
 # Verbesserter Syntax
 # Basiert auf Python 3
+# Schau unten für mehr
 
 
 
@@ -53,19 +56,8 @@ def check_syntax(lines):
     if "lgbtq rights" not in " ".join(lines):
         raise SyntaxError("ERROR: Achtung, du wirst auf Twitter gecancelt weil du dich nicht für LGBTQ+ Rechte einsetzt.")
     for i, line in enumerate(lines):
-        if i % 5 == 4 and "please" not in line:
-            raise SyntaxError("ERROR: Der PC hat keine Lust. Frag vielleicht netter.")
-    # Check if Python was used instead of Kirah++ TODO: BROKEN - idk why - chatgpt cant fix
-    #python_keywords = ["print", "if not", "if", "not bool", "import ", "def ", "int ", "float ", "string ", "for", "break"]
-    #for line in lines:
-    #    if any(keyword in line for keyword in python_keywords):
-    #        # More refined check to ignore Kirah++ specific syntax
-    #        kirah_keywords = ["sag mal bitte uwu ", "wandere ", "methode ", "integer 2: jetzt erst recht!", "buchstabenkette", "if'nt", "na wenn das so ist", "booln't"]
-    #        if not any(kirah_keyword in line for kirah_keyword in kirah_keywords):
-    #            raise SyntaxError("ERROR: Syntax Fehler. Stelle sicher in Kirah++ zu schreiben und nicht in Python.")
-    #        else:
-    #            # If it's a Kirah++ specific line, skip the Python keyword check
-    #            continue
+       if i % 10 == 9 and "please" not in line:
+           raise SyntaxError("ERROR: Der PC hat keine Lust. Frag vielleicht netter.")
 
 def translate_line(line):
     # Replace Kirah++ with Python
@@ -77,7 +69,7 @@ def translate_line(line):
             line = 'print(' + message + ')'
         else:
             # Es ist eine Variable
-            line = 'print(' + message + ')'
+            line = "    print(f" + '"' + message + '"' + ")"
     else:
         line = line.replace("wandere ", "import ")
         line = line.replace(" ein mit deckname ", " as ")
